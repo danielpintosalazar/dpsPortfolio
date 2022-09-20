@@ -5,6 +5,8 @@ DEBUG = env('DJANGO_DEBUG', default=False)
 
 ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
 
+CSRF_TRUSTED_ORIGINS = ['https://{}.com'.format(env('DOMAIN_NAME'))]
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
