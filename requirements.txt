@@ -1,0 +1,7 @@
+Django==4.0.2
+psycopg2==2.9.3
+django-environ==0.9.0
+future==0.18.2
+django_ckeditor==6.5.0
+Pillow==9.2.0
+django-import-export==2.8.0

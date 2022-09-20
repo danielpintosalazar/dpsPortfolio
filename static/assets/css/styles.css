@@ -1,0 +1,89 @@
+:root {
+  --theme-color: #130f40;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../../assets/img/Hero_mobile.png") top center / cover no-repeat;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../../assets/img/Hero_banner.png") top center / cover no-repeat;
+  }
+}
+
+.bg-primary {
+  background-color: var(--theme-color)!important;
+}
+
+#button-cv {
+  font-weight: bold;
+  border-radius: 50px;
+  border-width: 1px;
+  border-color: var(--theme-color);
+  color: var(--theme-color);
+}
+
+#button-cv:hover {
+  background-color: var(--theme-color);
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.skills-item {
+  background: var(--theme-color);
+  color: var(--white);
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.arrow-button {
+  animation: rebot 2s infinite;
+}
+
+@keyframes rebot {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-20px)
+  }
+  80% {
+    transform: translateY(0px)
+  }
+}
