@@ -52,7 +52,7 @@ def create_charge(request, customer):
                     customer=customer['id'],
                     confirm = False,
                     send_email = True,
-                    redirect_url='http://127.0.0.1:8000/pay-gateway/donate/'
+                    redirect_url='https://danielpintosalazar.com/'
                 )
         transaction = json.loads(json.dumps(transaction))
         url_transaction = transaction["payment_method"]["url"]
