@@ -135,3 +135,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Openpay Settings
+OPENPAY_API_KEY=env('OPENPAY_API_KEY')
+OPENPAY_MERCHANT_ID=env('OPENPAY_MERCHANT_ID')
+OPENPAY_PRODUCTION=env('OPENPAY_PRODUCTION', default=False)
+OPENPAY_VERIFY_SSL_CERTS=env('OPENPAY_VERIFY_SSL_CERTS', default=False)
+OPENPAY_COUNTRY=env('OPENPAY_COUNTRY', default='co')

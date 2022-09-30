@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}
+Daniel Pinto Salazar | Donate
+{% endblock title %}
+    
+
+{% block body %}
+
+<section id="donate" style="background-color:var(--theme-color);">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-1">
+                <button class="btn btn-link btn-block" type="button"><a href="{% url 'index' %}"><i class="icon ion-ios-home-outline" style="font-size: 40px;color: rgba(255,255,255,1);"></i></a></button>
+            </div>
+            <div class="col-md-6 mb-4 p-5 bg-light rounded-left">
+                <h2>Contrib to my work</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nameInput">Name</label>
+                                <input type="text" class="form-control" id="nameInput" name="name" placeholder="Your name here...">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="lastNameInput">Last Name</label>
+                                <input type="text" class="form-control" id="lastNameInput" name="last_name" placeholder="Your last name here...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input type="email" class="form-control" id="emailInput" name="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="currencyInput">Currency</label>
+                        <select class="form-control" id="currencyInput" name="currency">
+                            <option>COP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amountInput">Amount</label>
+                        <input type="number" class="form-control" id="amountInput" name="amount" placeholder="Eg: 10000">
+                    </div>
+                    <div class="row d-flex justify-content-around my-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="method" id="inlineRadio1" value="bank_account">
+                            <label class="form-check-label" for="inlineRadio1"><img class="pay-img-pse" src="{% static '/assets/img/pse.png' %}" alt=""></label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="method" id="inlineRadio2" value="card">
+                            <label class="form-check-label" for="inlineRadio2"><img class="pay-img-card" src="{% static '/assets/img/cards.png' %}" alt=""></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary col-12">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-5 mb-4 p-5 rounded-right" style="color: var(--white); background-color: rgba(255,255,255,0.2);">
+                <p class="mt-4" style="font-size: 10px">
+                    Los métodos de pago disponibles en el sitio web danielpintosalazar.com son: pagos en línea (tarjeta de crédito o débito, PSE) mediante la pasarela de pagos Openpay.
+                </p>
+                <p class="mt-4" style="font-size: 10px">
+                    Desde nuestro sitio no capturamos, almacenamos ni transmitimos datos transaccionales. Para esto contamos con los servicios de Openpay, que es una plataforma de pagos certificada; que garantiza la seguridad de todas las transacciones por medio de software de encriptación, procedimientos de validación y medidas robustas de protección de datos a nivel bancario (certificación PCI nivel 1). 
+                </p>
+                <p class="mt-4" style="font-size: 10px">
+                    Por eso realizar los pagos en nuestro sitio web es seguro. Si su pago es con PSE, la pasarela de pagos Openpay se encarga de comunicarlo directamente con su banco a través de ACH, al pagar a través de este canal, está utilizando los procesos de seguridad de su propio banco quien es el que valida su clave principal y segunda clave si es el caso.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

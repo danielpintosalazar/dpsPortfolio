@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Daniel Pinto Salazar</title>
+    <title>{% block title %}Daniel Pinto Salazar{% endblock title %}</title>
     <meta property="og:image" content="{% static '/assets/img/OG_Daniel_Pinto_Salazar.png' %}">
     <meta property="og:type" content="website">
     <meta name="description" content="Data analyst and business  administrator specialist with over two years work experience. I find valuable information for organizations of all sizes. Knowledge in Python, R, Power Bi, Excel, DAX, Data Science.">
@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="{% static '/assets/css/Modern-Contact-Form.css' %}">
     <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+    
+    {% block extracss %}
+    {% endblock extracss %}
+        
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6Z0RERXH8"></script>
     <script>
@@ -35,10 +39,17 @@
     
       gtag('config', 'G-J6Z0RERXH8');
     </script>
+    
+    {% block extrajs %}
+    {% endblock extrajs %}
+        
 </head>
 
 
 <body style="font-family: 'Reem Kufi', sans-serif;">
+    
+    {% block body %}
+
     <!-- Start: Hero Section -->
     <section class="d-flex flex-column justify-content-between" id="hero">
         <div id="hero-top">
@@ -424,6 +435,7 @@
                     <div style="margin-bottom: 16px;"><a data-aos="fade-left" data-aos-delay="50" href="#" style="color: var(--white);"><i class="fas fa-map-marked-alt" style="color: var(--white);font-size: 32px;margin-right: 16px;"></i>Yopal, Casanare, Colombia</a></div>
                     <div style="margin-bottom: 16px;"><a data-aos="fade-left" data-aos-delay="50" href="#" style="color: var(--white);"><i class="fas fa-phone-alt" style="color: var(--white);font-size: 32px;margin-right: 16px;"></i>(+57) 3143301645</a></div>
                     <div data-aos="fade-left" data-aos-delay="50" style="margin-bottom: 16px;"><a href="#" style="color: var(--white);"><i class="fa fa-envelope-o" style="color: var(--white);font-size: 32px;margin-right: 16px;"></i>danielpintosalazar1@gmail.com</a></div>
+                    <div data-aos="fade-left" data-aos-delay="50" style="margin-bottom: 16px;"><a href="{% url 'openpay:donate' %}" class="btn btn-md btn-light col-12">Donate</a></div>
                 </div>
             </div>
         </div>
@@ -463,6 +475,9 @@
             </div>
         </footer><!-- End: Footer Clean -->
     </section><!-- End: Footer Section -->
+
+    {% endblock body %}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
     <script src="{% static '/assets/js/bs-init.js' %}"></script>
